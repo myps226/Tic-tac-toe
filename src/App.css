@@ -64,14 +64,83 @@ ul {
 
 .game {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
+  flex-direction: column;
+  gap: 30px;
   background: white;
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   width: 100%;
+}
+
+.game-controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-controls h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mode-selector {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.mode-selector label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+}
+
+.mode-selector input[type="radio"] {
+  margin: 0;
+}
+
+.ai-settings {
+  margin-bottom: 20px;
+}
+
+.ai-settings label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #555;
+}
+
+.ai-settings select {
+  padding: 8px 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.reset-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
 }
 
 .game-board {
@@ -111,6 +180,17 @@ ul {
   transform: scale(0.95);
 }
 
+.square:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.square:disabled:hover {
+  background: #f8f9fa;
+  transform: none;
+}
+
 .status {
   margin-bottom: 20px;
   font-size: 24px;
@@ -126,6 +206,11 @@ ul {
 .game-info {
   flex: 1;
   max-width: 300px;
+}
+
+.game-info h3 {
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .game-info ol {
@@ -165,9 +250,13 @@ ul {
 /* Responsive design */
 @media (max-width: 768px) {
   .game {
-    flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding: 20px;
+  }
+  
+  .mode-selector {
+    flex-direction: column;
+    gap: 15px;
   }
   
   .game-info {
